@@ -1,0 +1,70 @@
+# Session 1 — Setup
+
+Welcome! This week we set up your workshop. No real coding yet — just getting all the tools working.
+
+## What's new this week
+
+- Your project folder exists.
+- You have Python, VS Code, Git, and your AI coding assistant installed.
+- You have a free Gemini API key saved in `.env`.
+- You can run a Streamlit app (even a tiny one!) on your own computer.
+
+## What you'll learn
+
+- What tools real AI developers use
+- How to install Python, VS Code, and Git
+- How to get a free API key from Google AI Studio
+- What an API key is and why you keep it secret
+
+## How to run it
+
+**Step 1.** Install Python 3.10 or newer from [python.org](https://www.python.org/downloads/).
+*(On macOS, you can also use `brew install python`. On Windows, check "Add Python to PATH" when installing.)*
+
+**Step 2.** Install [VS Code](https://code.visualstudio.com/).
+
+**Step 3.** Install [Git](https://git-scm.com/downloads).
+
+**Step 4.** Get a free Gemini API key:
+1. Go to [Google AI Studio](https://aistudio.google.com/).
+2. Sign in with a Google account.
+3. Click **Get API key** → **Create API key**.
+4. Copy the key.
+
+**Step 5.** In this folder, create a file called `.env` (same shape as `.env.example`) and paste:
+
+```
+GOOGLE_API_KEY=paste_your_key_here
+```
+
+**Step 6.** Open Terminal (macOS) or PowerShell (Windows), `cd` into this folder, and run:
+
+```bash
+python -m venv .venv
+source .venv/bin/activate       # Windows: .venv\Scripts\activate
+pip install -r requirements.txt
+streamlit run app.py
+```
+
+A browser tab should open at `http://localhost:8501`. You should see **"My Study Buddy"** as a page title.
+
+🎉 Congrats — your toolchain works!
+
+## What to try
+
+1. **Change the title.** Open `app.py` in VS Code. Change `"My Study Buddy"` to something like `"Bea's Study Buddy"`. Save. Refresh the browser. Did it change? That's your first code edit!
+2. **Add an emoji.** Try `st.title("My Study Buddy 📚")`.
+3. **Write your concept sheet.** On paper or in a doc, answer three questions:
+   - **Who** is my study buddy for? (yourself? your younger sibling? a friend?)
+   - **What AI topic** do you want it to help with most? (prompting? neural networks? AI ethics?)
+   - **One thing** it has to do really well? (explain concepts? quiz me? summarize my notes?)
+
+We'll use your answers next week when we bring the AI to life.
+
+## Common problems
+
+**"`python` command not found"** — On some systems, it's `python3` instead of `python`. Try `python3 -m venv .venv`.
+
+**"streamlit: command not found"** — You probably didn't activate the virtual environment. Run `source .venv/bin/activate` (or the Windows version) and you should see `(.venv)` at the start of your terminal line.
+
+**"port 8501 is already in use"** — Another Streamlit app is running. Close it, or run `streamlit run app.py --server.port 8502`.
